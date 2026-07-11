@@ -1,899 +1,251 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curriculum Vitae - Keveen Josue Sandoval Sandoval</title>
-    <!-- Google Fonts: Outfit -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Curriculum Vitae - Luis René Quisaguano</title>
     <style>
         :root {
-            --primary: #0f172a;       /* Slate 900 */
-            --secondary: #1e293b;     /* Slate 800 */
-            --accent: #2563eb;        /* Blue 600 */
-            --accent-light: #eff6ff;  /* Blue 50 */
-            --bg: #f8fafc;            /* Slate 50 */
-            --card-bg: #ffffff;
-            --text: #475569;          /* Slate 600 */
-            --text-dark: #0f172a;     /* Slate 900 */
-            --text-light: #64748b;    /* Slate 500 */
-            --border: #e2e8f0;        /* Slate 200 */
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Outfit', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            padding: 40px 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        .cv-container {
-            max-width: 1000px;
-            width: 100%;
-            background: var(--card-bg);
-            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-            border-radius: 16px;
-            display: flex;
-            flex-wrap: wrap;
-            overflow: hidden;
-            border: 1px solid var(--border);
-        }
-
-        /* Profile Banner / Header */
-        .cv-header {
-            width: 100%;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: #ffffff;
-            padding: 45px 40px;
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            border-bottom: 4px solid var(--accent);
-        }
-
-        .profile-avatar-container {
-            flex-shrink: 0;
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            border: 3px solid rgba(255, 255, 255, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.8rem;
-            font-weight: 700;
-            color: #ffffff;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .header-info {
-            flex-grow: 1;
-        }
-
-        .header-info h1 {
-            font-size: 2.3rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            margin-bottom: 6px;
-            color: #ffffff;
-            line-height: 1.1;
-        }
-
-        .header-info h2 {
-            font-size: 1.15rem;
-            font-weight: 400;
-            color: #93c5fd;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-        }
-
-        .header-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            font-size: 0.85rem;
-            color: #cbd5e1;
-        }
-
-        .meta-item {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(255, 255, 255, 0.08);
-            padding: 4px 12px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .meta-item svg {
-            color: #93c5fd;
-            flex-shrink: 0;
-        }
-
-        /* Columns Layout */
-        .cv-sidebar {
-            width: 35%;
-            background: #fafafa;
-            border-right: 1px solid var(--border);
-            padding: 40px 30px;
-        }
-
-        .cv-main {
-            width: 65%;
-            padding: 40px;
-        }
-
-        /* Sections */
-        .section {
-            margin-bottom: 35px;
-        }
-
-        .section:last-child {
-            margin-bottom: 0;
-        }
-
-        .section-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid var(--accent);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .section-title svg {
-            color: var(--accent);
-            flex-shrink: 0;
-        }
-
-        /* Contact Details */
-        .contact-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-        }
-
-        .contact-icon {
-            flex-shrink: 0;
-            color: var(--accent);
-            background: var(--accent-light);
-            width: 30px;
-            height: 30px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .contact-detail label {
-            display: block;
-            font-size: 0.72rem;
-            font-weight: 700;
-            color: var(--text-light);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 2px;
-        }
-
-        .contact-detail span,
-        .contact-detail a {
-            font-size: 0.88rem;
-            font-weight: 500;
-            color: var(--text-dark);
-            text-decoration: none;
-            word-break: break-word;
-            line-height: 1.4;
-            display: block;
-        }
-
-        .contact-detail a:hover {
-            color: var(--accent);
-        }
-
-        /* Skills Badges */
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .skill-badge {
-            background: #ffffff;
-            border: 1px solid var(--border);
-            color: var(--text);
-            padding: 6px 12px;
-            border-radius: 8px;
-            font-size: 0.82rem;
-            font-weight: 500;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.01);
-            transition: all 0.2s ease;
-        }
-
-        .skill-badge:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-            transform: translateY(-1px);
-            box-shadow: 0 4px 8px rgba(37, 99, 235, 0.05);
-        }
-
-        /* Language Bars */
-        .lang-list {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        .lang-item {
-            width: 100%;
-        }
-
-        .lang-name {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 5px;
-            color: var(--text-dark);
-        }
-
-        .lang-bar {
-            height: 7px;
-            background: var(--border);
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        .lang-progress {
-            height: 100%;
-            background: var(--accent);
-            border-radius: 4px;
-        }
-
-        /* Profile Block */
-        .profile-desc {
-            font-size: 0.92rem;
-            line-height: 1.65;
-            color: var(--text);
-            text-align: justify;
-        }
-
-        /* Timeline Items */
-        .timeline {
-            position: relative;
-            padding-left: 20px;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 5px;
-            bottom: 5px;
-            width: 2px;
-            background: var(--border);
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 25px;
-        }
-
-        .timeline-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -25px;
-            top: 6px;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--accent);
-            border: 2px solid #ffffff;
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
-        }
-
-        .timeline-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 5px;
-            margin-bottom: 6px;
-        }
-
-        .timeline-title {
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--text-dark);
-        }
-
-        .timeline-org {
-            font-size: 0.88rem;
-            font-weight: 600;
-            color: var(--accent);
-        }
-
-        .timeline-date {
-            font-size: 0.78rem;
-            font-weight: 600;
-            color: var(--text-light);
-            background: var(--bg);
-            padding: 2px 8px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-        }
-
-        .timeline-desc {
-            font-size: 0.88rem;
-            color: var(--text);
-            text-align: justify;
-            margin-top: 4px;
-        }
-
-        .timeline-list {
-            margin-top: 6px;
-            padding-left: 16px;
-            font-size: 0.88rem;
-            color: var(--text);
-        }
-
-        .timeline-list li {
-            margin-bottom: 4px;
-        }
-
-        /* Two columns details list */
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-        }
-
-        .card-item {
-            background: #ffffff;
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 15px;
-            transition: all 0.2s ease;
-        }
-
-        .card-item:hover {
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
-            border-color: #cbd5e1;
-        }
-
-        .card-item h4 {
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 4px;
-        }
-
-        .card-item .subtitle {
-            font-size: 0.82rem;
-            color: var(--accent);
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-
-        .card-item .meta-text {
-            font-size: 0.78rem;
-            color: var(--text-light);
-            margin-bottom: 8px;
-        }
-
-        .card-item p {
-            font-size: 0.85rem;
-            color: var(--text);
-            line-height: 1.4;
-        }
-
-        /* References Grid */
-        .references-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-
-        .reference-card {
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 15px;
-            background: #ffffff;
-        }
-
-        .reference-card h4 {
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 8px;
-        }
-
-        .reference-info {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            font-size: 0.82rem;
-        }
-
-        .reference-info span {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            color: var(--text);
-        }
-
-        .reference-info span strong {
-            color: var(--text-dark);
-        }
-
-        /* Signature block */
-        .signature-block {
-            margin-top: 35px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            border-top: 1px solid var(--border);
-            padding-top: 25px;
-        }
-
-        .signature-line {
-            width: 180px;
-            height: 1px;
-            background: var(--text-light);
-            margin-bottom: 8px;
-        }
-
-        .signature-name {
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--text-dark);
-        }
-
-        .signature-id {
-            font-size: 0.78rem;
-            color: var(--text-light);
-        }
-
-        .signature-meta {
-            font-size: 0.72rem;
-            color: #10b981;
-            font-weight: 600;
-            margin-top: 4px;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        /* Print formatting */
-        @media print {
-            body {
-                background: #ffffff;
-                padding: 0;
-                color: #000000;
-            }
-
-            .cv-container {
-                box-shadow: none;
-                border: none;
-                border-radius: 0;
-            }
-
-            .cv-header {
-                background: #f1f5f9 !important;
-                color: #000000 !important;
-                border-bottom: 3px solid #000000;
-                padding: 30px;
-            }
-
-            .cv-header h1 {
-                color: #000000 !important;
-            }
-
-            .cv-header h2 {
-                color: #0f172a !important;
-            }
-
-            .profile-avatar-container {
-                border-color: #000000 !important;
-                color: #000000 !important;
-                background: #e2e8f0 !important;
-            }
-
-            .header-meta {
-                color: #334155 !important;
-            }
-
-            .meta-item {
-                background: #f8fafc !important;
-                border: 1px solid #cbd5e1;
-            }
-
-            .cv-sidebar {
-                background: #ffffff !important;
-                border-right: 1px solid #cbd5e1;
-                padding: 30px 20px;
-            }
-
-            .cv-main {
-                padding: 30px;
-            }
-
-            .skill-badge {
-                border-color: #94a3b8 !important;
-                background: #ffffff !important;
-            }
-
-            .timeline::before {
-                background: #cbd5e1 !important;
-            }
-
-            .timeline-item::before {
-                background: #0f172a !important;
-                border-color: #ffffff !important;
-            }
-
-            .timeline-date {
-                background: #f1f5f9 !important;
-                color: #0f172a !important;
-                border: 1px solid #cbd5e1;
-            }
-
-            .reference-card,
-            .card-item {
-                border-color: #cbd5e1 !important;
-            }
-        }
-
-        /* Responsive */
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --bg-color: #f5f6fa;
+            --text-color: #333;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg-color); color: var(--text-color); line-height: 1.6; padding: 20px; }
+        .page { max-width: 1000px; margin: 0 auto; background: #fff; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-radius: 8px; display: flex; flex-wrap: wrap; overflow: hidden; }
+        
+        .header { background: var(--primary-color); color: #fff; width: 100%; padding: 40px 30px; text-align: center; }
+        .header h1 { font-size: 2.2rem; margin-bottom: 5px; }
+        .header h2 { font-size: 1.1rem; font-weight: 300; color: #bdc3c7; margin-bottom: 10px; }
+        .header p { font-size: 0.95rem; margin-bottom: 5px; }
+        
+        .sidebar { background: var(--secondary-color); color: #ecf0f1; width: 33%; padding: 30px; }
+        .main-content { width: 67%; padding: 35px; }
+        
+        h3 { border-bottom: 2px solid var(--accent-color); padding-bottom: 5px; margin-bottom: 20px; color: var(--primary-color); font-size: 1.3rem; text-transform: uppercase; letter-spacing: 1px;}
+        .sidebar h3 { border-bottom-color: #7f8c8d; color: #fff; }
+        
+        /* Sidebar sections */
+        .contact-info, .skills-list, .education-list { margin-bottom: 35px; }
+        .contact-info p, .education-item p { margin-bottom: 10px; font-size: 0.95rem; }
+        .contact-info a { color: #3498db; text-decoration: none; }
+        .contact-info strong { display: block; color: #bdc3c7; font-size: 0.85rem; margin-top: 15px; text-transform: uppercase; letter-spacing: 0.5px;}
+        .skills-list ul { list-style: none; }
+        .skills-list li { background: rgba(255,255,255,0.1); margin-bottom: 8px; padding: 6px 12px; border-radius: 4px; font-size: 0.95rem; border-left: 3px solid var(--accent-color); }
+        
+        .education-item { margin-bottom: 20px; }
+        .education-item h4 { font-size: 1rem; color: #fff; margin-bottom: 3px; }
+        .education-item p { color: #bdc3c7; font-size: 0.85rem; }
+        
+        /* Main sections */
+        .section { margin-bottom: 35px; }
+        .profile-text { text-align: justify; font-size: 0.95rem; }
+        
+        .job, .course, .award { margin-bottom: 25px; }
+        .job h4, .course h4, .award h4 { font-size: 1.15rem; color: var(--primary-color); margin-bottom: 3px; }
+        .job .date-location, .course .date, .award .date { font-size: 0.85rem; color: #7f8c8d; font-style: italic; display: block; margin-bottom: 10px; }
+        .job ul { padding-left: 20px; font-size: 0.95rem; }
+        .job ul li { margin-bottom: 6px; }
+        
+        .references { display: flex; flex-wrap: wrap; gap: 20px; }
+        .reference-item { width: 45%; }
+        .reference-item h4 { font-size: 1rem; color: var(--primary-color); margin-bottom: 5px; }
+        .reference-item p { font-size: 0.9rem; line-height: 1.4; color: #555; }
+        
+        .signature { margin-top: 60px; text-align: center; }
+        .signature p { margin-top: 5px; font-size: 0.95rem; }
+        .signature .name { font-weight: bold; margin-top: 15px; color: var(--primary-color); }
+        
         @media (max-width: 768px) {
-            .cv-header {
-                flex-direction: column;
-                text-align: center;
-                padding: 30px 20px;
-            }
-
-            .header-meta {
-                justify-content: center;
-            }
-
-            .cv-sidebar,
-            .cv-main {
-                width: 100%;
-                border-right: none;
-            }
-
-            .cv-sidebar {
-                border-bottom: 1px solid var(--border);
-            }
-
-            .references-grid {
-                grid-template-columns: 1fr;
-            }
+            .sidebar, .main-content { width: 100%; }
         }
     </style>
 </head>
-
 <body>
-    <div class="cv-container">
-        <!-- Header -->
-        <header class="cv-header">
-            <div class="profile-avatar-container">
-                KS
-            </div>
-            <div class="header-info">
-                <h1>KEVEEN JOSUE SANDOVAL SANDOVAL</h1>
-                <h2>Estudiante de Ingeniería Industrial</h2>
-                <div class="header-meta">
-                    <div class="meta-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                        <span>C.I. 050350217-1</span>
-                    </div>
-                    <div class="meta-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                        <span>15/01/2003 (23 años)</span>
-                    </div>
-                    <div class="meta-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
-                        <span>Ecuatoriana</span>
-                    </div>
-                    <div class="meta-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                        <span>Licencia Cat. B (Restr. Lentes)</span>
-                    </div>
-                </div>
-            </div>
+    <div class="page">
+        <!-- Cabecera -->
+        <header class="header">
+            <h1>LUIS RENÉ QUISAGUANO COLLAGUAZO</h1>
+            <h2>MÁSTER EN SISTEMAS DE INFORMACIÓN / INGENIERO EN SISTEMAS COMPUTACIONALES</h2>
+            <p>DNI: 1721895181 | 32 AÑOS - ECUATORIANO - SOLTERO</p>
         </header>
-
-        <!-- Sidebar (Columna Izquierda) -->
-        <aside class="cv-sidebar">
-            <!-- Contacto -->
-            <section class="section">
-                <h3 class="section-title">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                    Contacto
-                </h3>
-                <ul class="contact-list">
-                    <li class="contact-item">
-                        <div class="contact-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                        </div>
-                        <div class="contact-detail">
-                            <label>Email</label>
-                            <a href="mailto:keveensandoval@gmail.com">keveensandoval@gmail.com</a>
-                        </div>
-                    </li>
-                    <li class="contact-item">
-                        <div class="contact-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                        </div>
-                        <div class="contact-detail">
-                            <label>Celular</label>
-                            <span>0989046200</span>
-                        </div>
-                    </li>
-                    <li class="contact-item">
-                        <div class="contact-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-10a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                        </div>
-                        <div class="contact-detail">
-                            <label>Dirección</label>
-                            <span>Demetrio Aguilera Malta y Vicente Solano, Riobamba, Ecuador</span>
-                        </div>
-                    </li>
-                    <li class="contact-item">
-                        <div class="contact-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
-                        </div>
-                        <div class="contact-detail">
-                            <label>Otros datos</label>
-                            <span>Soltero · Tipo O+ · Donante: Sí</span>
-                        </div>
-                    </li>
+        
+        <!-- Columna Izquierda -->
+        <aside class="sidebar">
+            <div class="contact-info">
+                <h3>Contacto</h3>
+                
+                <strong>Email</strong>
+                <p>luis.quisaguano1@utc.edu.ec<br>renequisaguano@gmail.com</p>
+                
+                <strong>Teléfono</strong>
+                <p>+593 998820095<br>+593 22309 164</p>
+                
+                <strong>Dirección</strong>
+                <p>Machachi, Calle Tiberio y San Roque Nro. 078</p>
+                
+                <strong>Redes Sociales</strong>
+                <p>@luis.quisaguano<br>@QuisaguanoRene</p>
+            </div>
+            
+            <div class="skills-list">
+                <h3>Habilidades</h3>
+                <ul>
+                    <li>Resolución de Problemas</li>
+                    <li>Adaptabilidad</li>
+                    <li>Sólida Colaboración</li>
+                    <li>Ética de Trabajo</li>
+                    <li>Gestión del Tiempo</li>
+                    <li>Pensamiento Crítico</li>
+                    <li>Trabajo bajo Presión</li>
+                    <li>Liderazgo</li>
                 </ul>
-            </section>
-
-            <!-- Habilidades -->
-            <section class="section">
-                <h3 class="section-title">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                    Habilidades
-                </h3>
-                <div class="skills-grid">
-                    <span class="skill-badge">Trabajo en equipo</span>
-                    <span class="skill-badge">Trabajo bajo presión</span>
-                    <span class="skill-badge">Liderazgo</span>
-                    <span class="skill-badge">Comunicación efectiva</span>
-                    <span class="skill-badge">Resolución de problemas</span>
-                    <span class="skill-badge">Ética profesional</span>
+            </div>
+            
+            <div class="education-list">
+                <h3>Educación</h3>
+                <div class="education-item">
+                    <h4>MÁSTER EN SISTEMAS DE INFORMACIÓN</h4>
+                    <p>Universidad Técnica de Cotopaxi, Latacunga<br><em>2018 - 2020</em></p>
                 </div>
-            </section>
-
-            <!-- Idiomas -->
-            <section class="section">
-                <h3 class="section-title">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-                    Idiomas
-                </h3>
-                <div class="lang-list">
-                    <div class="lang-item">
-                        <div class="lang-name">
-                            <span>Español</span>
-                            <span style="color: var(--text-light); font-weight: 500;">Nativo</span>
-                        </div>
-                        <div class="lang-bar">
-                            <div class="lang-progress" style="width: 100%;"></div>
-                        </div>
-                    </div>
-                    <div class="lang-item">
-                        <div class="lang-name">
-                            <span>Inglés</span>
-                            <span style="color: var(--text-light); font-weight: 500;">Intermedio</span>
-                        </div>
-                        <div class="lang-bar">
-                            <div class="lang-progress" style="width: 60%;"></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </aside>
-
-        <!-- Main Content (Columna Derecha) -->
-        <main class="cv-main">
-            <!-- Perfil Profesional -->
-            <section class="section">
-                <h3 class="section-title">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                    Perfil Profesional
-                </h3>
-                <p class="profile-desc">
-                    Estudiante de Ingeniería Industrial con amplia expectativa de superación en áreas de producción, calidad, cadena de suministros, automatización con el propósito de conseguir un perfil profesional acorde a las necesidades de las industrias ecuatorianas. Mi enfoque estratégico se centrará en la optimización de operaciones y la implementación de estrategias eficaces que permitan alcanzar y superar los objetivos corporativos.
-                </p>
-            </section>
-
-            <!-- Educación -->
-            <section class="section">
-                <h3 class="section-title">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path></svg>
-                    Educación
-                </h3>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-header">
-                            <span class="timeline-title">INGENIERÍA INDUSTRIAL</span>
-                            <span class="timeline-date">Sep. 2020 - Actualidad</span>
-                        </div>
-                        <span class="timeline-org">Escuela Superior Politécnica de Chimborazo (ESPOCH)</span>
-                        <div class="timeline-desc">Riobamba, Ecuador</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-header">
-                            <span class="timeline-title">BACHILLERATO GENERAL UNIFICADO</span>
-                            <span class="timeline-date">Sep. 2017 - Jul. 2020</span>
-                        </div>
-                        <span class="timeline-org">Colegio Interandino</span>
-                        <div class="timeline-desc">Quito, Ecuador</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-header">
-                            <span class="timeline-title">EDUCACIÓN GENERAL BÁSICA</span>
-                            <span class="timeline-date">Sep. 2007 - Jul. 2017</span>
-                        </div>
-                        <span class="timeline-org">Colegio Particular Jim Irwin</span>
-                        <div class="timeline-desc">Quito, Ecuador</div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Experiencia Preprofesional -->
-            <section class="section">
-                <h3 class="section-title">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-                    Experiencia Preprofesional
-                </h3>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-header">
-                            <span class="timeline-title">Pasantías de Prácticas Preprofesionales</span>
-                            <span class="timeline-date">Ago. 2024 - Sep. 2024</span>
-                        </div>
-                        <span class="timeline-org">CIAUTO LTDA.</span>
-                        <div class="timeline-desc">Ambato, Ecuador</div>
-                        <ul class="timeline-list">
-                            <li>Diseñé un modelo 3D de una cámara térmica para una bomba de poliuretano.</li>
-                            <li>Elaboré hojas de elementos de trabajo (JES) de los automotores X30L SHINERAY.</li>
-                            <li>Realicé medición de tiempos en líneas de ensamble de chasis y cabina de automotores POER GREAT WALL.</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Certificaciones y Reconocimientos -->
-            <section class="section">
-                <h3 class="section-title">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
-                    Certificaciones y Reconocimientos
-                </h3>
-                <div class="info-grid">
-                    <div class="card-item">
-                        <h4>Certified DriveWorksXpress Associate</h4>
-                        <div class="subtitle">DriveWorks</div>
-                        <div class="meta-text">Emitido: 12/02/2024</div>
-                        <p>Certificación en automatización de diseños en SolidWorks. ID de Certificado: efde-fbb3-61c5-1c41.</p>
-                    </div>
-                    <div class="card-item">
-                        <h4>Reconocimiento por Desempeño y Liderazgo</h4>
-                        <div class="subtitle">IEEE ESPOCH - Directiva RAS</div>
-                        <div class="meta-text">Gestión 2024</div>
-                        <p>Reconocimiento al destacado desempeño y gestión en el cargo de "Tesorero" de la directiva saliente del capítulo Robotics and Automation Society (RAS) 2024.</p>
-                    </div>
-                    <div class="card-item" style="grid-column: span 2;">
-                        <h4>Constancia de Asistencia al II Congreso de Calidad</h4>
-                        <div class="subtitle">ASQ-UNALM & SEYIA</div>
-                        <div class="meta-text">09, 10 y 11 de Noviembre de 2023</div>
-                        <p>Participación en el II Congreso de Calidad virtual-internacional organizado por ASQ-UNALM Student Branch (Lima Section) y SEYIA, obteniendo competencias en calidad y su aplicación industrial.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Software / Herramientas -->
-            <section class="section">
-                <h3 class="section-title">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="15" x2="23" y2="15"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="15" x2="4" y2="15"></line></svg>
-                    Software y Herramientas
-                </h3>
-                <div class="skills-grid">
-                    <span class="skill-badge">Excel</span>
-                    <span class="skill-badge">Microsoft Office</span>
-                    <span class="skill-badge">SolidWorks</span>
-                    <span class="skill-badge">TiaPortal</span>
-                    <span class="skill-badge">FlexSim</span>
-                    <span class="skill-badge">BobCAD-CAM</span>
-                    <span class="skill-badge">MatLab</span>
-                </div>
-            </section>
-
-            <!-- Intereses -->
-            <section class="section">
-                <h3 class="section-title">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                    Intereses Profesionales
-                </h3>
-                <p class="profile-desc">
-                    Asimilar conocimientos inherentes al perfil profesional para desempeñar de manera eficiente y eficaz en los requerimientos de un entorno industrial, empresarial y corporativo.
-                </p>
-            </section>
-
-            <!-- Referencias Personales -->
-            <section class="section">
-                <h3 class="section-title">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                    Referencias Personales
-                </h3>
-                <div class="references-grid">
-                    <div class="reference-card">
-                        <h4>Ing. Eduardo García C. Msc.</h4>
-                        <div class="reference-info">
-                            <span><strong>Institución:</strong> ESPOCH</span>
-                            <span><strong>Celular:</strong> 0998289447</span>
-                            <span><strong>Correo:</strong> <a href="mailto:eduardo.garcía@espoch.edu.ec" style="color: var(--accent); text-decoration: none;">eduardo.garcía@espoch.edu.ec</a></span>
-                        </div>
-                    </div>
-                    <div class="reference-card">
-                        <h4>Ing. Deyby Carrillo</h4>
-                        <div class="reference-info">
-                            <span><strong>Empresa:</strong> CIAUTO LTDA.</span>
-                            <span><strong>Celular:</strong> 0958842604</span>
-                            <span><strong>Correo:</strong> <a href="mailto:asistenteensambleciauto@gmail.com" style="color: var(--accent); text-decoration: none;">asistenteensambleciauto@gmail.com</a></span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Signature block -->
-            <div class="signature-block">
-                <div class="signature-line"></div>
-                <span class="signature-name">KEVEEN JOSUE SANDOVAL SANDOVAL</span>
-                <span class="signature-id">C.I. 050350217-1</span>
-                <div class="signature-meta">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                    Firmado electrónicamente
+                <div class="education-item">
+                    <h4>INGENIERO EN SISTEMAS COMPUTACIONALES</h4>
+                    <p>Universidad Técnica de Cotopaxi, Latacunga<br><em>2011 - 2016</em></p>
                 </div>
             </div>
+        </aside>
+        
+        <!-- Columna Derecha -->
+        <main class="main-content">
+            <section class="section">
+                <h3>Perfil Profesional</h3>
+                <p class="profile-text">
+                    Tengo experiencia en el campo del desarrollo de sistemas de información, administración de bases de datos, inteligencia de negocios, inteligencia artificial y tecnología en general. Mi educación refleja un enfoque responsable, y poseo la capacidad de trabajar tanto de forma colaborativa en equipo como de manera independiente, demostrando creatividad, iniciativa y puntualidad. Asumo los retos y metas con seriedad, y estoy comprometido con el logro de objetivos. Mi experiencia profesional incluye aproximadamente 3 años como profesor universitario y más de 7 años como consultor de proyectos TI. Durante este tiempo, he participado en el desarrollo de sistemas de información en entornos web, de escritorio y/o móviles, implementando metodologías ágiles y utilizando herramientas como C#, Java, PHP, Python, JavaScript, PostgreSQL, SQL Server, Oracle, MariaDB, Firebase, MongoDB, Hadoop, Apache Spark, Hive, Power BI, Qlik Sense, Tableau, Pentaho, entre otras.
+                </p>
+            </section>
+            
+            <section class="section">
+                <h3>Experiencia Laboral</h3>
+                
+                <div class="job">
+                    <h4>Profesor Universitario</h4>
+                    <span class="date-location">Universidad Técnica de Cotopaxi | Abril 2021 - Presente</span>
+                    <ul>
+                        <li><strong>Maestría en Ciencia de Datos (Abril 2024 - Presente):</strong> Módulos de Machine Learning, Visualización de la Información.</li>
+                        <li><strong>Ingeniería en Sistemas de Información (Abril 2021 - Presente):</strong> Materias de Sistemas de Información para Inteligencia de Negocios, Desarrollo de Aplicaciones Móviles, Desarrollo de Aplicaciones Web, Tecnologías e Innovación para el Desarrollo Local, Sistemas de Información Geográfica (GIS).</li>
+                    </ul>
+                </div>
+                
+                <div class="job">
+                    <h4>Director de Tecnología (CTO)</h4>
+                    <span class="date-location">Evolution Soft | Enero 2018 - Presente</span>
+                    <ul>
+                        <li>Cofundador de Evolution Soft, empresa dedicada a la innovación y desarrollo de soluciones tecnológicas.</li>
+                        <li>Gestión de Proyectos Tecnológicos para empresas públicas y privadas.</li>
+                        <li>Implementación de proyectos de innovación con inteligencia de negocios.</li>
+                        <li>Desarrollo de Sistemas Web, de Escritorio, Móviles e Híbridos.</li>
+                        <li>Gestión de Infraestructura de TI y Director en Múltiples Proyectos.</li>
+                    </ul>
+                </div>
+                
+                <div class="job">
+                    <h4>Analista de Tecnologías de la Información y Comunicación</h4>
+                    <span class="date-location">Gobierno Municipal de Mejía | Marzo 2020 – Marzo 2021</span>
+                    <ul>
+                        <li>Planificación Estratégica y Diseño de Arquitectura.</li>
+                        <li>Gestión de Proyectos y Resolución de Problemas.</li>
+                        <li>Implementación de Tecnologías Emergentes y Seguridad de la Información.</li>
+                    </ul>
+                </div>
+                
+                <div class="job">
+                    <h4>Director Ejecutivo (CEO)</h4>
+                    <span class="date-location">Rebian Software | Marzo 2016 – Enero 2018</span>
+                    <ul>
+                        <li>Fundador de Rebian Software.</li>
+                        <li>Dirección Estratégica, Toma de Decisiones y Representación de la Empresa.</li>
+                        <li>Gestión de Equipos de Liderazgo y Desarrollo de Software.</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h3>Seminarios y Cursos</h3>
+                <div class="course">
+                    <h4>Buscador de Información y Comunicación</h4>
+                    <span class="date">Fundación Carlos Slim – 40 horas | Febrero, 2021</span>
+                </div>
+                <div class="course">
+                    <h4>II Encuentro de Investigación en Educación Superior</h4>
+                    <span class="date">Instituto Superior Tecnológico Pelileo – 20 horas | Diciembre, 2020</span>
+                </div>
+                <div class="course">
+                    <h4>Uso de Herramientas Digitales para Facilitar la Educación Online</h4>
+                    <span class="date">Gobierno Municipal de Mejía – 48 horas | Octubre, 2020</span>
+                </div>
+                <div class="course">
+                    <h4>Certificaciones Inbound & HubSpot Sales Software</h4>
+                    <span class="date">HubSpot Academy – 80 horas (Total) | Septiembre, 2019</span>
+                </div>
+                <div class="course">
+                    <h4>Curso de Programación de Dispositivos Móviles</h4>
+                    <span class="date">Platzi – 40 horas | Julio, 2019</span>
+                </div>
+                <div class="course">
+                    <h4>Plataformas de Integración, Despliegue Continuo e Infraestructura como Código</h4>
+                    <span class="date">BDOT Automation Tools – 8 horas | Mayo, 2018</span>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h3>Reconocimientos y Participaciones</h3>
+                <div class="award">
+                    <h4>Premio Ciencia y Tecnología</h4>
+                    <span class="date">Centro de Desarrollo Tecnológico e Innovación de Mejía | Diciembre 2022</span>
+                </div>
+                <div class="award">
+                    <h4>Beca Institucional por Excelencia Académica</h4>
+                    <span class="date">Universidad Técnica de Cotopaxi | Mejor Puntaje del Programa de Maestría | Mayo 2019</span>
+                </div>
+                <div class="award">
+                    <h4>III Concurso Nacional de Desarrollo de Software, IBEE 2015</h4>
+                    <span class="date">Escuela Superior Politécnica de Chimborazo | Primer Lugar | Julio 2015</span>
+                </div>
+                <div class="award">
+                    <h4>Miembro de la Asociación de Software Libre del Ecuador (ASLE)</h4>
+                    <span class="date">Miembro activo desde 2014</span>
+                </div>
+                <div class="award">
+                    <h4>Mejor Graduado & Becas por Mérito Académico</h4>
+                    <span class="date">Instituto Superior Tecnológico Aloasí (2009) / UTC (Periodos 2012-2015)</span>
+                </div>
+            </section>
+            
+            <section class="section">
+                <h3>Referencias Personales</h3>
+                <div class="references">
+                    <div class="reference-item">
+                        <h4>Mg. Veronica Tapia</h4>
+                        <p>Directora Académica de la Facultad de Ingeniería y Ciencias Aplicadas<br>Universidad Técnica de Cotopaxi<br>Teléfono: +593 992952383</p>
+                    </div>
+                    <div class="reference-item">
+                        <h4>Dra. Mayra Alban</h4>
+                        <p>Vicerrectora Académica<br>Universidad Técnica de Cotopaxi<br>Teléfono: +593 987773341</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="signature">
+                <p>……………………………………..…………</p>
+                <p class="name">LUIS RENÉ QUISAGUANO COLLAGUAZO</p>
+                <p>DNI: 1721895181</p>
+                <p>Teléfono: +593 998820095</p>
+                <p style="font-size: 0.8rem; margin-top: 10px; color: #7f8c8d;">Firmado electrónicamente</p>
+            </div>
+            
         </main>
     </div>
 </body>
-
 </html>
