@@ -3,186 +3,433 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curriculum Vitae - Keveen Sandoval</title>
+    <title>Curriculum Vitae - Keveen Josue Sandoval</title>
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #34495e;
-            --accent-color: #3498db;
-            --bg-color: #f5f6fa;
-            --text-color: #333;
+            --primary-color: #1e293b;
+            --secondary-color: #475569;
+            --accent-color: #2563eb;
+            --sidebar-bg: #f8fafc;
+            --border-color: #e2e8f0;
+            --text-main: #334155;
+            --text-light: #64748b;
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg-color); color: var(--text-color); line-height: 1.6; padding: 20px; }
-        .page { max-width: 1000px; margin: 0 auto; background: #fff; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-radius: 8px; display: flex; flex-wrap: wrap; overflow: hidden; }
         
-        .header { background: var(--primary-color); color: #fff; width: 100%; padding: 40px 30px; text-align: center; }
-        .header h1 { font-size: 2.2rem; margin-bottom: 5px; }
-        .header h2 { font-size: 1.1rem; font-weight: 300; color: #bdc3c7; margin-bottom: 10px; }
-        .header p { font-size: 0.95rem; margin-bottom: 5px; }
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+        }
         
-        .sidebar { background: var(--secondary-color); color: #ecf0f1; width: 33%; padding: 30px; }
-        .main-content { width: 67%; padding: 35px; }
+        body { 
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; 
+            background: #f1f5f9; 
+            color: var(--text-main); 
+            line-height: 1.5; 
+            padding: 40px 20px; 
+        }
         
-        h3 { border-bottom: 2px solid var(--accent-color); padding-bottom: 5px; margin-bottom: 20px; color: var(--primary-color); font-size: 1.3rem; text-transform: uppercase; letter-spacing: 1px;}
-        .sidebar h3 { border-bottom-color: #7f8c8d; color: #fff; }
+        .page { 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            background: #fff; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05); 
+            border-radius: 12px; 
+            display: flex; 
+            flex-wrap: wrap; 
+            overflow: hidden; 
+        }
         
-        /* Sidebar sections */
-        .contact-info, .skills-list, .education-list { margin-bottom: 35px; }
-        .contact-info p, .education-item p { margin-bottom: 10px; font-size: 0.95rem; }
-        .contact-info a { color: #3498db; text-decoration: none; }
-        .contact-info strong { display: block; color: #bdc3c7; font-size: 0.85rem; margin-top: 15px; text-transform: uppercase; letter-spacing: 0.5px;}
-        .skills-list ul { list-style: none; }
-        .skills-list li { background: rgba(255,255,255,0.1); margin-bottom: 8px; padding: 6px 12px; border-radius: 4px; font-size: 0.95rem; border-left: 3px solid var(--accent-color); }
+        /* Cabecera Principal */
+        .header { 
+            background: var(--primary-color); 
+            color: #fff; 
+            width: 100%; 
+            padding: 45px 40px; 
+            text-align: left;
+            border-bottom: 4px solid var(--accent-color);
+        }
         
-        .education-item { margin-bottom: 20px; }
-        .education-item h4 { font-size: 1rem; color: #fff; margin-bottom: 3px; }
-        .education-item p { color: #bdc3c7; font-size: 0.85rem; }
+        .header h1 { 
+            font-size: 2.4rem; 
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 6px; 
+            text-transform: uppercase;
+        }
         
-        /* Main sections */
-        .section { margin-bottom: 35px; }
-        .profile-text { text-align: justify; font-size: 0.95rem; }
+        .header h2 { 
+            font-size: 1.25rem; 
+            font-weight: 400; 
+            color: #94a3b8; 
+            letter-spacing: 1px;
+            margin-bottom: 15px; 
+            text-transform: uppercase;
+        }
         
-        .job, .course, .award { margin-bottom: 25px; }
-        .job h4, .course h4, .award h4 { font-size: 1.15rem; color: var(--primary-color); margin-bottom: 3px; }
-        .job .date-location, .course .date, .award .date { font-size: 0.85rem; color: #7f8c8d; font-style: italic; display: block; margin-bottom: 10px; }
-        .job ul { padding-left: 20px; font-size: 0.95rem; }
-        .job ul li { margin-bottom: 6px; }
+        .header .meta-info { 
+            font-size: 0.9rem; 
+            color: #cbd5e1;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .header .meta-info span {
+            background: rgba(255,255,255,0.08);
+            padding: 4px 12px;
+            border-radius: 6px;
+        }
         
-        .references { display: flex; flex-wrap: wrap; gap: 20px; }
-        .reference-item { width: 45%; }
-        .reference-item h4 { font-size: 1rem; color: var(--primary-color); margin-bottom: 5px; }
-        .reference-item p { font-size: 0.9rem; line-height: 1.4; color: #555; }
+        /* Contenedores de Columnas */
+        .sidebar { 
+            background: var(--sidebar-bg); 
+            width: 35%; 
+            padding: 40px 30px; 
+            border-right: 1px solid var(--border-color);
+        }
         
-        .signature { margin-top: 60px; text-align: center; }
-        .signature p { margin-top: 5px; font-size: 0.95rem; }
-        .signature .name { font-weight: bold; margin-top: 15px; color: var(--primary-color); }
+        .main-content { 
+            width: 65%; 
+            padding: 40px; 
+        }
         
+        /* Títulos de Secciones */
+        h3 { 
+            color: var(--primary-color); 
+            font-size: 1.15rem; 
+            text-transform: uppercase; 
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        h3::after {
+            content: '';
+            flex: 1;
+            margin-left: 15px;
+            height: 2px;
+            background: var(--border-color);
+        }
+
+        .main-content h3::after {
+            background: linear-gradient(to right, var(--border-color), transparent);
+        }
+        
+        /* Barra Lateral (Contacto y Habilidades) */
+        .contact-info, .skills-container, .education-container { 
+            margin-bottom: 40px; 
+        }
+        
+        .contact-item {
+            margin-bottom: 15px;
+        }
+
+        .contact-item strong { 
+            display: block; 
+            color: var(--secondary-color); 
+            font-size: 0.8rem; 
+            text-transform: uppercase; 
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
+        }
+
+        .contact-item p {
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+        
+        /* Habilidades en Bloques/Tags */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag { 
+            background: #fff;
+            color: var(--text-main);
+            font-size: 0.85rem; 
+            padding: 6px 12px; 
+            border-radius: 6px; 
+            border: 1px solid var(--border-color);
+            font-weight: 500;
+        }
+
+        .skill-tag.advanced {
+            border-left: 3px solid var(--accent-color);
+            background: #eff6ff;
+        }
+        
+        .education-item { 
+            margin-bottom: 15px; 
+        }
+
+        .education-item h4 { 
+            font-size: 0.95rem; 
+            color: var(--primary-color); 
+            margin-bottom: 2px; 
+        }
+
+        .education-item p { 
+            color: var(--text-light); 
+            font-size: 0.85rem; 
+        }
+        
+        /* Contenido Principal */
+        .profile-text { 
+            text-align: justify; 
+            font-size: 0.95rem; 
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+        
+        /* Estilo de Línea de Tiempo para Experiencia */
+        .timeline {
+            border-left: 2px solid var(--border-color);
+            padding-left: 20px;
+            margin-left: 5px;
+        }
+
+        .job { 
+            position: relative;
+            margin-bottom: 30px; 
+        }
+
+        .job::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            border: 2px solid #fff;
+        }
+        
+        .job h4 { 
+            font-size: 1.1rem; 
+            color: var(--primary-color); 
+            margin-bottom: 2px; 
+        }
+
+        .job .date-location { 
+            font-size: 0.85rem; 
+            color: var(--accent-color); 
+            font-weight: 600;
+            display: block; 
+            margin-bottom: 8px; 
+        }
+
+        .job ul { 
+            padding-left: 15px; 
+            font-size: 0.9rem; 
+            color: var(--text-main);
+        }
+
+        .job ul li { 
+            margin-bottom: 4px; 
+        }
+        
+        /* Cursos y Reconocimientos */
+        .course-item, .award-item {
+            margin-bottom: 15px;
+            background: var(--sidebar-bg);
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .course-item h4, .award-item h4 {
+            font-size: 0.95rem;
+            color: var(--primary-color);
+        }
+
+        .course-item .date, .award-item .date {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            display: block;
+            margin-top: 2px;
+        }
+        
+        /* Firma Electrónica */
+        .signature { 
+            margin-top: 50px; 
+            text-align: center; 
+            border-top: 1px dashed var(--border-color);
+            padding-top: 30px;
+        }
+
+        .signature .line {
+            color: var(--border-color);
+            margin-bottom: 5px;
+        }
+
+        .signature .name { 
+            font-weight: bold; 
+            font-size: 1rem;
+            color: var(--primary-color); 
+        }
+
+        .signature p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+        
+        /* Responsivo */
         @media (max-width: 768px) {
-            .sidebar, .main-content { width: 100%; }
+            .sidebar, .main-content { width: 100%; border-right: none; }
+            body { padding: 10px; }
+        }
+
+        /* Optimización de Impresión */
+        @media print {
+            body { background: #fff; padding: 0; }
+            .page { box-shadow: none; max-width: 100%; border-radius: 0; }
+            .skill-tag { border: 1px solid #cbd5e1 !important; background: #fff !important; }
+            .course-item, .award-item { background: #fff !important; page-break-inside: avoid; }
+            .job { page-break-inside: avoid; }
         }
     </style>
 </head>
 <body>
     <div class="page">
         <header class="header">
-            <h1>KEVEEN JOSUE SANDOVAL SANDOVAL</h1>
-            <h2>INGENIERO INDUSTRIAL</h2>
-            <p>DNI: 0503502171 | FECHA DE NACIMIENTO: 15-01-2003 - ECUADOR - SOLTERO/A</p>
+            <h1>Keveen Josue Sandoval Sandoval</h1>
+            <h2>Ingeniero Industrial</h2>
+            <div class="meta-info">
+                <span><strong>DNI:</strong> 0503502171</span>
+                <span><strong>Nacimiento:</strong> 15-01-2003</span>
+                <span><strong>Estado Civil:</strong> Soltero/a</span>
+                <span><strong>País:</strong> Ecuador</span>
+            </div>
         </header>
         
         <aside class="sidebar">
             <div class="contact-info">
                 <h3>Contacto</h3>
                 
-                <strong>Email</strong>
-                <p>keveensandoval@gmail.com</p>
+                <div class="contact-item">
+                    <strong>Email</strong>
+                    <p>keveensandoval@gmail.com</p>
+                </div>
                 
-                <strong>Teléfono</strong>
-                <p>989046200 / 996242197</p>
+                <div class="contact-item">
+                    <strong>Teléfono</strong>
+                    <p>989046200 / 996242197</p>
+                </div>
                 
-                <strong>Dirección</strong>
-                <p>Demetrio Aguilera Malta y Vicente Solano, Riobamba, Chimborazo, Ecuador</p>
+                <div class="contact-item">
+                    <strong>Dirección</strong>
+                    <p>Demetrio Aguilera Malta y Vicente Solano, Riobamba, Chimborazo</p>
+                </div>
             </div>
             
-            <div class="skills-list">
+            <div class="skills-container">
                 <h3>Habilidades</h3>
-                <ul>
-                    <li>SolidWorks: Avanzado</li>
-                    <li>Autocad: Intermedio</li>
-                    <li>Microsoft Office: Intermedio</li>
-                    <li>Diseño industrial</li>
-                    <li>Inglés: Escrito Intermedio, Oral Intermedio</li>
-                    <li>Resolución de problemas</li>
-                    <li>Trabajo en equipo</li>
-                    <li>Liderazgo</li>
-                    <li>Responsabilidad</li>
-                    <li>Trabajo bajo presión</li>
-                </ul>
+                <div class="skills-grid">
+                    <span class="skill-tag advanced">SolidWorks (Avanzado)</span>
+                    <span class="skill-tag">AutoCAD (Intermedio)</span>
+                    <span class="skill-tag">Microsoft Office</span>
+                    <span class="skill-tag">Diseño Industrial</span>
+                    <span class="skill-tag">Inglés Intermedio</span>
+                    <span class="skill-tag">Resolución de Problemas</span>
+                    <span class="skill-tag">Trabajo en Equipo</span>
+                    <span class="skill-tag">Liderazgo y Gestión</span>
+                    <span class="skill-tag">Responsabilidad</span>
+                    <span class="skill-tag">Trabajo bajo Presión</span>
+                </div>
             </div>
             
-            <div class="education-list">
+            <div class="education-container">
                 <h3>Educación</h3>
                 <div class="education-item">
-                    <h4>INGENIERO INDUSTRIAL</h4>
-                    <p>Escuela Superior Politécnica De Chimborazo<br><em>01-09-2020 - 01-10-2025</em></p>
+                    <h4>Ingeniero Industrial</h4>
+                    <p>Escuela Superior Politécnica de Chimborazo</p>
+                    <p><em>01-09-2020 - 01-10-2025</em></p>
                 </div>
             </div>
         </aside>
         
         <main class="main-content">
-            <section class="section">
+            <section class="section" style="margin-bottom: 35px;">
                 <h3>Perfil Profesional</h3>
                 <p class="profile-text">
-                    Soy una persona con conocimientos en el área de ingeniería industrial, con habilidades como el liderazgo y trabajo en equipo, busco fortalecimiento y crecimiento a nivel profesional, dispuesto a desempeñar cualquier labor con capacidad de resolución de problemas y aprendizaje rápido.
+                    Soy una persona con conocimientos consolidados en el área de Ingeniería Industrial, con habilidades destacadas en liderazgo y trabajo en equipo. Busco el fortalecimiento y crecimiento continuo a nivel profesional, plenamente dispuesto a desempeñar labores técnicas u operativas con una alta capacidad de resolución de problemas complejos y un aprendizaje sumamente rápido.
                 </p>
             </section>
             
-            <section class="section">
+            <section class="section" style="margin-bottom: 35px;">
                 <h3>Experiencia Laboral</h3>
-                
-                <div class="job">
-                    <h4>Miembro de grupo de investigación</h4>
-                    <span class="date-location">AUTOPRO- ESPOCH | 30-08-2024 - 22-10-2025</span>
-                    <ul>
-                        <li>Mejora continua de máquina de rehabilitación de miembro superior.</li>
-                        <li>Diseño CAD de componentes mecánicos.</li>
-                        <li>Selección de elementos mecánicos y eléctricos.</li>
-                    </ul>
+                <div class="timeline">
+                    <div class="job">
+                        <h4>Miembro de Grupo de Investigación</h4>
+                        <span class="date-location">AUTOPRO - ESPOCH | 30-08-2024 - 22-10-2025</span>
+                        <ul>
+                            <li>Mejora continua de la máquina de rehabilitación de miembro superior.</li>
+                            <li>Diseño asistido por computadora (CAD) de componentes mecánicos.</li>
+                            <li>Selección estratégica de elementos mecánicos y eléctricos complejos.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="job">
+                        <h4>Asistente de Ensamble</h4>
+                        <span class="date-location">Ciauto | 14-08-2024 - 30-09-2024</span>
+                        <ul>
+                            <li>Elaboración de hojas de estandarización de procesos de ensamble para furgonetas Shineray X30L.</li>
+                            <li>Toma de tiempos y cálculo preciso de Tiempos de Ciclo en estaciones de ensamble para la verificación de mejoras operativas.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="job">
+                        <h4>Clases y Tareas Dirigidas</h4>
+                        <span class="date-location">Independiente | 20-09-2023 - 20-06-2025</span>
+                        <ul>
+                            <li>Preparación e impartición de clases particulares de Física y Matemáticas dirigidas a estudiantes de Educación Básica Superior y Bachillerato.</li>
+                            <li>Resolución metodológica de problemas prácticos de matemática, geometría, física y razonamiento lógico.</li>
+                        </ul>
+                    </div>
                 </div>
-                
-                <div class="job">
-                    <h4>Asistente de Ensamble</h4>
-                    <span class="date-location">Ciauto | 14-08-2024 - 30-09-2024</span>
-                    <ul>
-                        <li>Elaborar hojas de estandarización de procesos de ensamble de furgonetas Shineray X30L.</li>
-                        <li>Toma de tiempos y cálculo de Tiempos de Ciclo en las estaciones de ensamble para comprobación de mejoras.</li>
-                    </ul>
+            </section>
+            
+            <section class="section" style="margin-bottom: 35px;">
+                <h3>Cursos y Certificaciones</h3>
+                <div class="course-item">
+                    <h4>Diseño de Proyectos con AutoCAD</h4>
+                    <span class="date">Espinosa De Los Monteros — 40 horas | Septiembre - Octubre 2025</span>
                 </div>
-                
-                <div class="job">
-                    <h4>Clases y tareas dirigidas</h4>
-                    <span class="date-location">Independiente | 20-09-2023 - 20-06-2025</span>
-                    <ul>
-                        <li>Preparación de clases particulares de física y matemáticas para estudiantes de educacion básica superior y bachillerato.</li>
-                        <li>Resolución de problemas prácticos de matemática, geometría, física y razonamiento matemático.</li>
-                    </ul>
+                <div class="course-item">
+                    <h4>AutoCAD 3D</h4>
+                    <span class="date">Espinosa De Los Monteros — 40 horas | Octubre 2025</span>
+                </div>
+                <div class="course-item">
+                    <h4>Certified DriveWorksXpress Associate (CDWXA)</h4>
+                    <span class="date">DriveWorks — Cert. ID: efde-fbb3-61c5-1c41 | Febrero 2024</span>
+                </div>
+                <div class="course-item">
+                    <h4>II Congreso Internacional de Calidad</h4>
+                    <span class="date">Asistencia Avalada por ASQ-UNALM y SEYIA | Noviembre 2023</span>
                 </div>
             </section>
             
             <section class="section">
-                <h3>Seminarios, Cursos y Certificaciones</h3>
-                <div class="course">
-                    <h4>Diseño de Proyectos con Autocad</h4>
-                    <span class="date">Espinosa De Los Monteros – 40 horas | Septiembre - Octubre 2025</span>
-                </div>
-                <div class="course">
-                    <h4>AUTOCAD 3D</h4>
-                    <span class="date">Espinosa De Los Monteros – 40 horas | Octubre 2025</span>
-                </div>
-                <div class="course">
-                    <h4>Certified DriveWorksXpress Associate</h4>
-                    <span class="date">DriveWorks | Febrero 2024</span>
-                </div>
-                <div class="course">
-                    <h4>II Congreso de Calidad</h4>
-                    <span class="date">ASQ-UNALM y SEYIA | Noviembre 2023</span>
-                </div>
-            </section>
-            
-            <section class="section">
-                <h3>Reconocimientos y Participaciones</h3>
-                <div class="award">
-                    <h4>Tesorero de la directiva saliente del capítulo "RAS"</h4>
-                    <span class="date">Rama Estudiantil IEEE ESPOCH | 2024</span>
+                <h3>Reconocimientos</h3>
+                <div class="award-item">
+                    <h4>Tesorero de la Directiva Saliente</h4>
+                    <p>Capítulo "Robotics and Automation Society" (RAS) – Rama Estudiantil IEEE ESPOCH</p>
+                    <span class="date">Gestión y Liderazgo Comunitario | Periodo 2024</span>
                 </div>
             </section>
 
             <div class="signature">
-                <p>……………………………………..…………</p>
-                <p class="name">KEVEEN JOSUE SANDOVAL SANDOVAL</p>
-                <p>DNI: 0503502171</p>
-                <p>Teléfono: 989046200 / 996242197</p>
-                <p style="font-size: 0.8rem; margin-top: 10px;
+                <p class="line">………………………………………………………………</p>
+                <p class="name">Keveen Josue Sandoval Sandoval</p>
+                <p>C.I. 0503502171</p>
+                <p style="font-size: 0.75rem; margin-top: 6px; color: #94a3b8; font-style: italic;">Documento estructurado profesionalmente - Firmado electrónicamente</p>
+            </div>
+        </main>
+    </div>
 </body>
 </html>
